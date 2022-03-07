@@ -1,5 +1,3 @@
-#%%
-#test
 import requests
 from bs4 import BeautifulSoup
 import numpy as np
@@ -342,24 +340,3 @@ field_dic = {'桐生':'01','戸田':'02','江戸川':'03',
             '児島':'16','宮島':'17','徳山':'18',
             '下関':'19','若松':'20','芦屋':'21',
             '福岡':'22','唐津':'23','大村':'24'}
-
-#%%
-dataframe = pd.read_csv('https://boatrace--data.s3.ap-northeast-1.amazonaws.com/boatrace_data.csv', index_col=0)
-#%%
-hd = '{}{}{}'.format(2022, str(2).zfill(2), str(12).zfill(2))
-jcd = '03'
-rno = 1
-
-open_fields = ret_open_fields(hd)
-print(open_fields)
-#%%
-racecard, results = ret_racecard_results(hd,jcd,rno)
-grades, rates = ret_grade_rate(hd,jcd,rno)
-prior_information = ret_prior_information(hd,jcd,rno)
-odds = ret_all_odds(hd,jcd,rno)
-#%%
-race_data = pd.concat([racecard, grades, rates, prior_information, results, odds],axis=1)
-race_data = race_data.rename(index={0: int('{}{}{}'.format(hd, str(jcd).zfill(2), str(rno).zfill(2)))})
-# %%
-race_data
-# %%
