@@ -343,7 +343,7 @@ field_dic = {'桐生':'01','戸田':'02','江戸川':'03',
             '福岡':'22','唐津':'23','大村':'24'}
 
 #%%
-dataframe = pd.read_csv('C:/Users/ai-so/OneDrive/Documents/programing/boatrace/data/boatrace_data.csv', index_col=0)
+dataframe = pd.read_csv('https://boatrace--data.s3.ap-northeast-1.amazonaws.com/boatrace_data.csv', index_col=0)
 #%%
 hd = '{}{}{}'.format(2022, str(2).zfill(2), str(12).zfill(2))
 jcd = '03'
